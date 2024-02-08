@@ -6,14 +6,15 @@ import time
 import threading
 
 # create telegram bot object
-TOKEN = '6942929325:AAH7RX0AJQpo1UCPuavW5HVCPact3DTZFZY'
+TOKEN = ""
 bot = telebot.TeleBot(TOKEN)
-# test chat, https://t.me/click_official_group, https://t.me/Click_ru_group/1
-chats = ['-1001603333180', '-1001659611539', '-1001962799766']
+
+with open('chats.txt', 'r') as file:
+    chats = file.read().splitlines()
 
 # set API keys
-contract_address = '0x80E0c85119a6B523CFeEF5e1533bcC2593b35AD1'
-moralis_api_key = "ruCHp9fWwYHR7tG5VW4xpVRg0vQYOa9u71ZRKCnHWyoE5WJBMho7mrL8DLf1I1Nj"
+contract_address = ""
+moralis_api_key = ""
 
 # handle command /notify
 @bot.message_handler(commands=['notify'])
